@@ -1,0 +1,10 @@
+---
+- name: Adding root-{{UNIQUENAME}} to hosts
+  add_host:
+    hostname: "{{UNIQUENAME}}"
+    ansible_host: "{{IP}}"
+    ansible_port: "{{CONTAINERSSHPORT}}"
+    ansible_user: "{{SSHUSERNAME}}"
+    ansible_password: "{{SSHUSERPASS}}"
+
+

@@ -1,0 +1,22 @@
+## Default values for wordpress.
+## This is a YAML-formatted file.
+## Declare variables to be passed into your templates.
+#fullnameOverride: kube1
+#DBNAME: kube1
+#DBUSER: kube1
+#WPDOMAIN: kube1.com
+#WPTITLE: kube1
+#WPADMIN: kube1
+#WPEMAIL: kube1@kube1.com
+#INSTANCEIP: 1.1.1.1
+#CONTAINERHTTPPORT: ""
+#CONTAINERSSHPORT: ""
+#SITETYPE: live
+#DOMAIN: kube1.com
+#IS_WWW: "yo"
+#DBPASSWORD: kube1
+#WPPASSWORD: kube1
+#SSHROOTPASS: kube1
+#SSHUSERNAME: kube1
+#SSHUSERPASS: kube1
+#MYSQLROOTPASS: kube1

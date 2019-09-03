@@ -1,0 +1,2 @@
+[master]
+{IP} ansible_user=root

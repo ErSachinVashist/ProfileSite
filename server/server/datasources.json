@@ -1,0 +1,16 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "mysitedb": {
+    "host": "localhost",
+    "port": 3306,
+    "url": "",
+    "database": "mysitedb",
+    "password": "Sv1282@g12",
+    "name": "mysitedb",
+    "user": "mysite",
+    "connector": "mysql"
+  }
+}
