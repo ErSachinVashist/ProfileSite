@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5a7fb14c-9198-45e8-b7fa-6d504092c301" name="Default Changelist" comment="" />
+    <list default="true" id="5a7fb14c-9198-45e8-b7fa-6d504092c301" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helm/deployChart/templates/cert.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/helm/deployChart/templates/cert.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helm/deployChart/templates/ingress.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/helm/deployChart/templates/ingress.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helm/deployChart/templates/mysql-deployment.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/helm/deployChart/templates/database.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helm/deployChart/templates/wordpress-deployment.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/helm/deployChart/templates/client.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helm/deployChart/values.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/helm/deployChart/values.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/k8-manifests/1_ingress_deployment.yml" beforeDir="false" afterPath="$PROJECT_DIR$/k8s-manifests/ingress/manifest.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/k8-manifests/2_ingress_service.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/k8-manifests/3_cert_manager.yml" beforeDir="false" afterPath="$PROJECT_DIR$/k8s-manifests/cert-manager/cert-manager/manifest.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/k8-manifests/4_letsencrypt_issues.yml" beforeDir="false" afterPath="$PROJECT_DIR$/k8s-manifests/cert-manager/issuer/manifest.yml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,7 +25,7 @@
   <component name="ProjectId" id="1QLEKps0kVQVfuZG6h31SvicRTQ" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../breeze-v2/server" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -24,6 +35,14 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/k8s-manifests/cert-manager/issuer" />
+      <recent name="$PROJECT_DIR$/k8s-manifests/ingress" />
+      <recent name="$PROJECT_DIR$/k8s-manifests/cert-manager/cert-manager" />
+      <recent name="$PROJECT_DIR$/k8s-manifests/cert-manager" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -47,7 +66,10 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1567541414659</updated>
-      <workItem from="1567541416230" duration="3589000" />
+      <workItem from="1567541416230" duration="3843000" />
+      <workItem from="1567586379163" duration="19000" />
+      <workItem from="1567844633724" duration="5059000" />
+      <workItem from="1568035033130" duration="23000" />
     </task>
     <servers />
   </component>
@@ -59,7 +81,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

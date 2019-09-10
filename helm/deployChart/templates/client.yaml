@@ -1,0 +1,85 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: client-svc
+  namespace: vashist-app
+  labels:
+    app: client
+    tier: frontend
+spec:
+  type: NodePort
+  ports:
+    - name: http
+      port: 80
+      targetPort: 80
+    - name: ssh
+      port: 22
+      targetPort: 22
+
+  selector:
+    app: client
+    tier: frontend
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: client-pv-claim
+  namespace: vashist-app
+spec:
+  accessModes:
+    - ReadWriteMany
+  storageClassName: app-storage
+  resources:
+    requests:
+      storage: 10Gi
+---
+
+apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
+kind: Deployment
+metadata:
+  name: client
+  namespace: vashist-app
+  labels:
+    app: client
+    tier: frontend
+spec:
+  selector:
+    matchLabels:
+      app: client
+      tier: frontend
+  template:
+    metadata:
+      labels:
+        app: client
+        tier: frontend
+    spec:
+      containers:
+        - image: client
+          name: client
+          env:
+            - name: API_URL
+              value: loopback-svc
+          lifecycle:
+            postStart:
+              exec:
+                command: ["/bin/bash", "-c", "/etc/init.d/nginx restart > /root/messages.log"]
+          readinessProbe:
+            exec:
+              command: ["/bin/bash", "-c", "/etc/init.d/nginx status > /root/messages.log"]
+            initialDelaySeconds: 5
+            periodSeconds: 2
+            timeoutSeconds: 1
+          ports:
+            - containerPort: 80
+              name: client-ui
+            - containerPort: 443
+              name: client-ui-ssl
+          volumeMounts:
+            - name: client-persistent-storage
+              mountPath: /usr/share/nginx/html
+#      imagePullSecrets:
+#        - name: gitlab-registry
+      volumes:
+        - name: client-persistent-storage
+          persistentVolumeClaim:
+            claimName: client-pv-claim

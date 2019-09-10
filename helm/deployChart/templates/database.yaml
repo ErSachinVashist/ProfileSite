@@ -1,17 +1,18 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ template "wordpress.fullname" . }}-mysql
-  namespace: ingress-nginx
+  name: mysql-svc
+  namespace: vashist-app
   labels:
-    app: {{ template "wordpress.fullname" . }}
+    app: mysql
+    tier: database
 spec:
   ports:
     - port: 3306
       targetPort: 3306
   selector:
-    app: {{ template "wordpress.fullname" . }}
-    tier: mysql
+    app: mysql
+    tier: database
   type: ClusterIP
 
 ---
@@ -19,12 +20,12 @@ spec:
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
-  name: {{ template "wordpress.fullname" . }}-mysql-pv-claim
-  namespace: ingress-nginx
+  name: mysql-pv-claim
+  namespace: vashist-app
 spec:
   accessModes:
     - ReadWriteMany
-  storageClassName: aws-efs
+  storageClassName: app-storage
   resources:
     requests:
       storage: 10Gi
@@ -33,20 +34,21 @@ spec:
 apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
 kind: Deployment
 metadata:
-  name: {{ template "wordpress.fullname" . }}-mysql
-  namespace: ingress-nginx
+  name: mysql
+  namespace: vashist-app
   labels:
-    app: {{ template "wordpress.fullname" . }}
+    app: mysql
+    tier: database
 spec:
   selector:
     matchLabels:
-      app: {{ template "wordpress.fullname" . }}
-      tier: mysql
+      app: mysql
+      tier: database
   template:
     metadata:
       labels:
-        app: {{ template "wordpress.fullname" . }}
-        tier: mysql
+        app: mysql
+        tier: database
     spec:
       containers:
         - image: percona:5.7.26-centos
@@ -66,7 +68,11 @@ spec:
           volumeMounts:
             - name: mysql-persistent-storage
               mountPath: /var/lib/mysql
+          lifecycle:
+            postStart:
+              exec:
+                command: ['/bin/bash','-c', 'mysql -u {{ .Values.DBUSER }} -p{{ .Values.DBPASSWORD }} -h {{ mysql-svc }}-mysql -e "show databases" | grep -m 1 {{ .Values.DBNAME }}']
       volumes:
         - name: mysql-persistent-storage
           persistentVolumeClaim:
-            claimName: {{ template "wordpress.fullname" . }}-mysql-pv-claim
+            claimName: mysql-pv-claim
