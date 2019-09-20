@@ -11,7 +11,7 @@ const theme = createMuiTheme({
         error: red,
     },
     typography: {
-        fontFamily:"'Niramit', sans-serif",
+        fontFamily:"'Gayathri', sans-serif",
         useNextVariants: true
     }
 });

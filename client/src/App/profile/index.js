@@ -10,7 +10,7 @@ import {profileCss} from '../../helpers/componentStyle';
 import {ChangeAuthor} from "../../actions/authorAction";
 class Profile extends React.Component {
 
-    componentWillMount() {
+    componentDidMount() {
         this.props.ChangeAuthor({name:'Sachin Vashist'})
     }
 

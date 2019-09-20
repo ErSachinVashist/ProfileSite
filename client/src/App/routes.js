@@ -5,8 +5,8 @@ import Profile from './profile'
 import NotFound from '../helpers/notFound'
 
 const routes=[
-    <Route key='home' exact path='/' component={Home}/>,
-    <Route key='profile' path='/profile' component={Profile}/>,
+    <Route key='profile' exact path='/' component={Profile}/>,
+    <Route key='home' path='/home' component={Home}/>,
     <Route key='notFound' component={NotFound}/>
 ]
 

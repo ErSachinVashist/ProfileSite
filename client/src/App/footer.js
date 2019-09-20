@@ -5,7 +5,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 import { withStyles } from '@material-ui/core/styles';
 import {footerCss} from '../helpers/componentStyle'
-import {FaLinkedin,FaFacebook,FaInstagram} from "react-icons/fa";
+import {FaLinkedin,FaFacebook,FaInstagram,FaGithub} from "react-icons/fa";
 
 class Footer extends React.Component {
     render() {
@@ -17,6 +17,11 @@ class Footer extends React.Component {
                 }}>
                     <Toolbar variant="dense">
                         <div className={classes.grow} />
+                        <IconButton color="inherit"
+                                    onClick={()=>window.open('https://github.com/ErSachinVashist/React-boiler','_blank')}
+                        >
+                            <FaGithub />
+                        </IconButton>
                         <IconButton color="inherit"
                                     onClick={()=>window.open('https://www.linkedin.com/in/sachin-vashist','_blank')}
                         >
