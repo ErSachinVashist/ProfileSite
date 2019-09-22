@@ -107,13 +107,6 @@ const indexCss=(theme)=>({
     mainWrapper:{
         margin:5
     },
-    quoteMsg: {
-        transition: theme.transitions.create("all", {
-            duration: '2s',
-            easing: theme.transitions.easing.easeInOut
-        }),
-    },
-
 });
 
 

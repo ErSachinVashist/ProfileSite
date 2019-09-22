@@ -17,26 +17,7 @@ class Footer extends React.Component {
                 }}>
                     <Toolbar variant="dense">
                         <div className={classes.grow} />
-                        <IconButton color="inherit"
-                                    onClick={()=>window.open('https://github.com/ErSachinVashist/React-boiler','_blank')}
-                        >
-                            <FaGithub />
-                        </IconButton>
-                        <IconButton color="inherit"
-                                    onClick={()=>window.open('https://www.linkedin.com/in/sachin-vashist','_blank')}
-                        >
-                            <FaLinkedin />
-                        </IconButton>
-                        <IconButton color="inherit"
-                                    onClick={()=>window.open('https://www.facebook.com/vashist82','_blank')}
-                        >
-                            <FaFacebook />
-                        </IconButton>
-                        <IconButton color="inherit"
-                                    onClick={()=>window.open('https://www.instagram.com/vashist797','_blank')}
-                        >
-                            <FaInstagram />
-                        </IconButton>
+
 
                     </Toolbar>
                 </AppBar>
