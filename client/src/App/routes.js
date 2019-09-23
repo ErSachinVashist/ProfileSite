@@ -1,6 +1,6 @@
 import React from 'react'
 import {Route} from 'react-router-dom'
-import Home from './home'
+import Home from './index'
 import Profile from './profile'
 import NotFound from '../helpers/notFound'
 

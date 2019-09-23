@@ -2,13 +2,10 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import clsx from 'clsx';
 import Card from '@material-ui/core/Card';
-import CardHeader from '@material-ui/core/CardHeader';
 import CardContent from '@material-ui/core/CardContent';
 import CardActions from '@material-ui/core/CardActions';
-import Avatar from '@material-ui/core/Avatar';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
-import { red } from '@material-ui/core/colors';
 import {FaLinkedin,FaFacebook,FaInstagram,FaGithub} from "react-icons/fa";
 import {ParallaxBanner} from "react-scroll-parallax";
 import Fade from "react-reveal/Fade";
@@ -54,7 +51,9 @@ const useStyles = makeStyles(theme => ({
         transform: 'rotate(180deg)',
     },
     avatar: {
-        backgroundColor: red[500],
+        margin: 10,
+        width: 60,
+        height: 60,
     },
     grow: {
         flexGrow: 1,
@@ -63,8 +62,11 @@ const useStyles = makeStyles(theme => ({
         textAlign:'center',
         position:'absolute',
         width:'100%',
-        top:"23%",
-        padding:10
+        top:"40%",
+        padding:0
+    },
+    cardAction:{
+        color:'lavender'
     }
 
 }));
@@ -82,8 +84,12 @@ export default function RecipeReviewCard(props) {
 
            <ParallaxBanner
                 layers={[
-                    {
-                        image: 'http://www.sompaisoscatalans.cat/simage/180/1802853/developer-desktop-wallpaper.jpg',
+                    // {
+                    //     image: 'http://www.sompaisoscatalans.cat/simage/180/1802853/developer-desktop-wallpaper.jpg',
+                    //     amount: 0.6,
+                    // }
+                    ,{
+                        image: 'https://www.agdelta.com/wp-content/uploads/2018/06/website-parallax-background-C.jpg',
                         amount: 0.2,
                     },
                 ]}
@@ -91,7 +97,7 @@ export default function RecipeReviewCard(props) {
                     height: '100vh',
                 }}
             >
-               <CardActions disableSpacing>
+               <CardActions className={classes.cardAction} disableSpacing>
                    <div className={classes.grow} />
                    <IconButton color="inherit"
                                onClick={()=>window.open('https://github.com/ErSachinVashist/React-boiler','_blank')}
@@ -116,25 +122,10 @@ export default function RecipeReviewCard(props) {
                </CardActions>
             </ParallaxBanner>
 
-            {/*<CardHeader*/}
-            {/*    classes={{*/}
-            {/*        title:classes.cardTitle,*/}
-            {/*        subheader:classes.cardSubtitle*/}
-            {/*    }}*/}
-            {/*    avatar={*/}
-            {/*        <Avatar aria-label="recipe" className={classes.avatar}>*/}
-            {/*            S*/}
-            {/*        </Avatar>*/}
-            {/*    }*/}
-            {/*    title="Sachin Vashist"*/}
-            {/*    subheader="Full Stack Developer"*/}
-            {/*/>*/}
-
-
             <CardContent className={classes.content}>
-                <Typography style={{color:'whitesmoke'}}  variant="h5">Hey, I'm</Typography>
-                <Fade timeout='2000'>
-                    <Typography style={{fontFamily:"'Dancing Script', cursive",color:'whitesmoke'}} variant="h3">--Sachin Vashist--</Typography>
+                <Typography style={{color:'lavender'}}  variant="h5">Hey, I'm</Typography>
+                <Fade timeout={2000}>
+                    <Typography style={{fontFamily:"'Dancing Script', cursive",color:'lavender'}} variant="h3">--Sachin Vashist--</Typography>
                 </Fade>
 
             </CardContent>

@@ -51,19 +51,10 @@ const footerCss=(theme)=>({
     })
 
 const homeCss=(theme)=>({
-    card: {
-        maxWidth: 400,
-        margin:'14vh auto',
-        [theme.breakpoints.down('xs')]:{
-            width:300
-        }
-    },
-    cardMedia: {
-        height: 0,
-        paddingTop: '56.25%', // 16:9
-    },
-    cardHead:{
-        textAlign:'center'
+    paperStyle:{
+        margin:'0 auto',
+        padding:'40px',
+        width:'70%',
     }
 });
 
@@ -105,8 +96,13 @@ const notFoundCss=(theme)=>({
 
 const indexCss=(theme)=>({
     mainWrapper:{
-        margin:5
+
     },
+    paperStyle:{
+        margin:'0 auto',
+        padding:'40px',
+        width:'70%',
+    }
 });
 
 

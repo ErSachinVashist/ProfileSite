@@ -6,6 +6,10 @@ import configureAppStore from './store';
 import App from './App'
 const store = configureAppStore();
 
+window.onbeforeunload = function () {
+    window.scrollTo(0, 0);
+}
+
 const returnApp=App=>{
     return ReactDOM.render(
         <Provider store={store}>
